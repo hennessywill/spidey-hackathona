@@ -1,1 +1,1 @@
-import joint
+from joint import Joint

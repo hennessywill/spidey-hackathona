@@ -30,7 +30,19 @@ class State(object):
       states += [1]
     elif self.curr == (len(self.curr) - 1):
       states += [self.curr - 1]
-    else
+    else:
       states += [self.curr - 1, self.curr + 1]
     return states
-    
+
+class StateConfig(object):
+  """config for state type"""
+  def __init__(self, degrees, initial = 0, offer_stationary = False, offer_all = False):
+    super(StateConfig, self).__init__()
+    self.degrees = degrees
+    self.initial = initial
+    self.offer_stationary = offer_stationary
+    self.offer_all = offer_all
+
+  def create_state():
+    return State(self.degrees, self.initial, offer_stationary=self.offer_stationary, offer_all=self.offer_all)
+                                  
