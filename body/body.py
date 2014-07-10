@@ -1,4 +1,4 @@
-from joint import joint.Joint
+from joint import joint
 
 class Body(object):
   """docstring for Robot"""

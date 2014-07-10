@@ -24,3 +24,5 @@
 
 # python
 *.pyc
+*.pyo
+*~

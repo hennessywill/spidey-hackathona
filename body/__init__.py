@@ -1,1 +1,1 @@
-import body.Body as Body
+from body import Body
