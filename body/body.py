@@ -1,4 +1,5 @@
-from joint import joint
+import Adafruit_BBIO.PWM as PWM
+from joint import joint.Joint
 
 class Body(object):
   """docstring for Robot"""
@@ -10,19 +11,19 @@ class Body(object):
     duty = config.hip.duty
     freq = config.hip.freq
     for pin in config.hip.pins:
-      joint_dict[pin] = Joint(pin, duty, freq, state)
+      joint_dict[pin] = Joint(PWM, pin, state)
 
     state = config.knee.state_config.create_state()
     duty = config.knee.duty
     freq = config.knee.freq
     for pin in config.knee.pins:
-      joint_dict[pin] = Joint(pin, duty, freq, state)
-    
+      joint_dict[pin] = Joint(PWM, pin, state)
+
     for (pin, state_config) in config.override:
       joint_dict[pin].set_state(state_config.create_state())
 
     self.joints = joint_dict.values()
-    
+
   def possible_next_states():
     next_move = {}
     for joint in self.joints:
