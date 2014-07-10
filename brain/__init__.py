@@ -1,1 +1,1 @@
-import config
+from brain import Brain

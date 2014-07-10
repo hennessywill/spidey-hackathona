@@ -1,7 +1,7 @@
 class Joint(object):
   """Manages leg of muybridge"""
   def __init__(self, pwm, pin, state):
-    super(Leg, self).__init__()
+    super(Joint, self).__init__()
     self.pin = pin
     self.state = state
     self.pwm = pwm
@@ -18,7 +18,7 @@ class Joint(object):
     self.servo.set(self.state.get_value())
 
   def get_possible_states(self):
-    return self.states.possible()
+    return self.state.possible()
 
   def stop(self):
     self.servo.stop()

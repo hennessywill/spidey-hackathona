@@ -8,27 +8,27 @@ class State(object):
     self.offer_stationary = offer_stationary
     self.offer_all = offer_all
 
-  def reset():
+  def reset(self):
     self.curr = self.initial
 
-  def get_value():
+  def get_value(self):
     return self.states[self.curr]
 
-  def get():
+  def get(self):
     return self.curr
 
-  def set(state_index):
+  def set(self, state_index):
     self.curr = state_index
 
-  def possible():
+  def possible(self):
     states = []
-    if offer_stationary:
+    if self.offer_stationary:
       states = [self.curr]
-    if offer_all:
+    if self.offer_all:
       states += range(0, self.curr) + range(self.curr + 1, len(self.states))
     elif self.curr == 0:
       states += [1]
-    elif self.curr == (len(self.curr) - 1):
+    elif self.curr == (len(self.states) - 1):
       states += [self.curr - 1]
     else:
       states += [self.curr - 1, self.curr + 1]
@@ -43,6 +43,6 @@ class StateConfig(object):
     self.offer_stationary = offer_stationary
     self.offer_all = offer_all
 
-  def create_state():
+  def create_state(self):
     return State(self.degrees, self.initial, offer_stationary=self.offer_stationary, offer_all=self.offer_all)
                                   
