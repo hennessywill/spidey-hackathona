@@ -22,8 +22,8 @@ class Body(object):
 
   def possible_next_states(self):
     next_move = {}
-    for joint in self.joints:
-      next_move[joint] = joint.get_possible_states()
+    for index, joint in enumerate(self.joints):
+      next_move[index] = joint.get_possible_states()
     return next_move
 
   def make_move(self, joint_index, move):

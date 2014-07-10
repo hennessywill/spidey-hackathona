@@ -3,7 +3,7 @@ from state import StateConfig
 
 hip = {
   "pins":["P8_13"],
-  "state_config": StateConfig([0, 180], 0),
+  "state_config": StateConfig([0, 130, 180], 0),
 }
 
 knee = {
