@@ -37,3 +37,7 @@ class Body(object):
     for joint in self.joints:
       joint.reset()
 
+  def stop():
+    for joint in self.joints:
+      joint.stop()
+    PWM.cleanup()
