@@ -1,5 +1,5 @@
 class Joint(object):
-  """Manages leg of muybridge"""
+  """ Manages leg of muybridge """
   def __init__(self, pwm, pin, state):
     super(Joint, self).__init__()
     self.pin = pin

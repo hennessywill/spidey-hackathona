@@ -2,11 +2,11 @@ from body import Body
 from time import sleep
 
 class Brain(object):
-  """docstring for Brain"""
+  """ Control of the robot """
   def __init__(self, config):
     super(Brain, self).__init__()
-    self.body = Body(config)
-    self.body.start()
+    self.body = Body(config) # acknowledge mortality
+    self.body.start() # begin lifelong struggle against gravity
 
   def run(self, manual=False):
     while True:

@@ -1,5 +1,5 @@
 class State(object):
-  """state of joint"""
+  """ Joint in a leg (hip or knee) """
   # offer_al does not implictly return stationary state
   def __init__(self, states, initial, offer_stationary = False, offer_all = False):
     super(State, self).__init__()
